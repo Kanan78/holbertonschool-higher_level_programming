@@ -2,7 +2,7 @@
 def print_matrix_integer(matrix):
     for row in matrix:
         for idx,element in enumerate(row):
-            if idx == len(matrix) - 1:
+            if idx == len(row) - 1:
                 print("{:d}".format(element), end="")
             else:
                 print("{:d}".format(element), end=" ")
