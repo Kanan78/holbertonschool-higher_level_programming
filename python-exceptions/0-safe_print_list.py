@@ -3,5 +3,6 @@ def safe_print_list(my_list, x):
     try:
         for i in range(x):
             print(my_list[i], end='')
+        print(x)
     except IndexError:
         pass
