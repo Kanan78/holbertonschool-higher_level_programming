@@ -5,6 +5,6 @@ def safe_print_list(my_list, x):
         for i in range(x):
             k += 1
             print(my_list[i], end='')
-        print(f"\n{x}")
+        print(f"\n{k}")
     except IndexError:
         pass
