@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
         return 0
     s = 0
     le = len(roman_string)
-    for i in range(l):
+    for i in range(le):
         if i+1 < le and r[roman_string[i+1]] > r[roman_string[i]]:
             s -= r[roman_string[i]]
         else:
