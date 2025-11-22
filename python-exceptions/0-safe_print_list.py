@@ -5,4 +5,4 @@ def safe_print_list(my_list, x):
             print(my_list[i], end='')
     except IndexError:
         pass
-    print(x)
+    print(f"\n{x}")
