@@ -3,10 +3,13 @@
 
 
 class Rectangle:
-    """This class defines a rectangle by: (based on 3-rectangle.py)"""
+    """This class defines a rectangle by: (based on 5-rectangle.py)"""
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
+
+    number_of_instances = 0
 
     @property
     def width(self):
@@ -52,3 +55,7 @@ class Rectangle:
 
     def __repr__(self):
         return (f"Rectangle({self.__width}, {self.__height})")
+
+    def __del__(self):
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
