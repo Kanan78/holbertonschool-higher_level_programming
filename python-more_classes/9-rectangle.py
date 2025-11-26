@@ -28,8 +28,9 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if size.width():
-            return cls(size, size)
+        if size < 0:
+            raise raise ValueError("Width Must be >= 0")
+        return cls(size,size)
 
     @property
     def width(self):
