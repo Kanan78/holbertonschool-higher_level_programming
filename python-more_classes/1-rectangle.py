@@ -6,7 +6,7 @@ class Rectangle:
     """This class defines a rectangle by: (based on 0-rectangle.py)"""
     def __init__(self, width=0, height=0):
         self.width = width
-        self.height = width
+        self.height = height
 
     @property
     def width(self):
