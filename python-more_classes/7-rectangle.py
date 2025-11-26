@@ -4,6 +4,7 @@
 
 class Rectangle:
     """This class defines a rectangle by: (based on 6-rectangle.py)"""
+
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
@@ -47,7 +48,7 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        sy = getattr(self, "print_symbol", Rectangle.print_symbol)    
+        sy = getattr(self, "print_symbol", Rectangle.print_symbol)
         return "\n".join([str(sy) * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
