@@ -28,7 +28,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if size > 0:
+        if size.width():
             return cls(size, size)
 
     @property
