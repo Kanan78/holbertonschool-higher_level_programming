@@ -5,8 +5,8 @@
 class Rectangle:
     """This class defines a rectangle by: (based on 3-rectangle.py)"""
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -33,7 +33,7 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        return self.__width * self__height
+        return self.__width * self.__height
 
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
