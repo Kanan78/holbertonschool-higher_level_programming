@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """This class defines a rectangle by: (based on 2-rectangle.py)"""
+    """This class defines a rectangle by: (based on 3-rectangle.py)"""
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
@@ -49,3 +49,6 @@ class Rectangle:
             if i != self.__height - 1:
                 a += "\n"
         return a
+
+    def __repr__(self):
+        return (f"Rectangle({self.__width}, {self.__height})")
