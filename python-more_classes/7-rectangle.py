@@ -51,6 +51,7 @@ class Rectangle:
         sy = getattr(self, "print_symbol", Rectangle.print_symbol)
         lines = [str(sy) * self.__width for _ in range(self.__height)]
         return "\n".join(lines)
+
     def __repr__(self):
         return (f"Rectangle({self.__width}, {self.__height})")
 
