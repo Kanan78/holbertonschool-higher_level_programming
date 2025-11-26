@@ -14,7 +14,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        if isinstance(value, int):
+        if isinstance(self.__width, int):
             if self.__width < 0:
                 raise ValueError("width must be >= 0")
         else:
@@ -26,7 +26,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        if isinstance(value, int):
+        if isinstance(self.__height, int):
             if self.__height < 0:
                 raise ValueError("height must be >= 0")
         else:
