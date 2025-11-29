@@ -5,7 +5,6 @@
 def pascal_triangle(n):
     """It returns a 2D list for Pascal's triangle of n."""
     a = [[1], [1, 1]]
-
     for i in range(2, n):
         p = a[i-1]
         r = [1]
@@ -13,4 +12,8 @@ def pascal_triangle(n):
             r.append(p[j] + p[j+1])
         r.append(1)
         a.append(r)
+    if n == 0:
+        return []
+    elif n == 1:
+        return [[1]]
     return a
