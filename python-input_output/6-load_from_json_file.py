@@ -4,7 +4,7 @@
 import json
 
 
-def save_to_json_file(filename):
+def load_from_json_file(filename):
     """This function creates an object from a JSON file"""
     with open(filename, 'r') as f:
         json.load(f)
