@@ -14,7 +14,8 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
 
 
-class Rectangle(BaseGeomtery):
+class Rectangle(BaseGeometry):
+    """This class defines a Rectangle"""
     def __init__(self, width, height):
         if integer_validator(width, self.width):
             if integer_validator(height, self.height):
