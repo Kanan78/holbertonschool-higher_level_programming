@@ -6,4 +6,4 @@ def read_file(filename=""):
     """This function reads a text file and prints it to stdout"""
     with open(filename, 'r') as f:
         t = f.read()
-        print(t)
+        print(t, end='')
