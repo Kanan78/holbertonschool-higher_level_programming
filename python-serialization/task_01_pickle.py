@@ -6,13 +6,14 @@ import pickle
 
 class CustomObject:
     """A class representing a person with name, age, and student status."""
+
     def __init__(self, name, age, is_student):
         self.name = name
         self.age = age
         self.is_student = is_student
 
     def display(self):
-        for i, v in (self.__dict__).items():
+        for i, v in self.__dict__.items():
             a = f"{i}: {v}"
             print(a.capitalize())
 
