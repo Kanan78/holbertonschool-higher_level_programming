@@ -17,10 +17,14 @@ class CustomObject:
             print(a.capitalize())
 
     def serialize(self, filename):
-        with open(filename, 'r') as f:
-            pickle.dump(self.__dict__, f)
+        try:
+            with open(filename, 'w') as f:
+                pickle.dump(self.__dict__, f)
 
     @classmethod
     def deserialize(cls, filename):
-        with open(filename, 'r') as f:
-            return pickle.load(f)
+        try:
+            with open(filename, 'r') as f:
+                return pickle.load(f)
+        except FileNotFoundError:
+            return None
