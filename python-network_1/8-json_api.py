@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-"""It takes in a letter and sends a post request"""
+"""Sends a POST request to search a user and displays the result."""
 
-import requests
 import sys
+import requests
 
-url = "http://localhost:5000/search_user"
-if len(sys.argv) == 2:
-    letter = sys.argv[1]
-else:
-    letter = ""
-data = {"q": letter}
-r = requests.post(url, data=data)
+letter = sys.argv[1] if len(sys.argv) > 1 else ""
+url = "http://0.0.0.0:5000/search_user"
+
 try:
-    d = r.json()
-    if not d:
-        print("No result")
-    else:
-        print(f'[{d.get("id")}] {d.get("name")}')
-except ValueError:
-    print("Not a valid JSON")
+    response = requests.post(url, data={'q': letter})
+    try:
+        data = response.json()
+        if data:
+            print(f"[{data.get('id')}] {data.get('name')}")
+        else:
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
+except requests.RequestException as e:
+    print(f"Error connecting to server: {e}")
+
