@@ -5,4 +5,4 @@ import requests
 r = requests.get("https://intranet.hbtn.io/status")
 print("Body response:")
 print(f"\t- type: {type(r.text)}")
-print(f"\t- content: {r.content}")
+print(f'\t- content: {r.content.decode("utf-8"}')
