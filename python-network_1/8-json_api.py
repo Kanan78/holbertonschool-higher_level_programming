@@ -17,5 +17,5 @@ try:
         print("No result")
     else:
         print(f'[{d.get("id")}] {d.get("name")}')
-except json.JSONDecodeError:
+except ValueError:
     print("Not a valid JSON")
