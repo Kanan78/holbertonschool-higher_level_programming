@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""It takes in a letter and sends a post request with the letter as a parameter"""
+"""It takes in a letter and sends a post request"""
 
 import requests
 import sys
