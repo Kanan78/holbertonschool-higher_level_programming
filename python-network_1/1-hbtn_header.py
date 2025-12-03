@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""It takes in a URL, sends a request to the URL and displays X-Request-Id"""
 import sys
 import urllib.request
 
