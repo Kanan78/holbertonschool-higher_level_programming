@@ -4,7 +4,7 @@
 import requests
 import sys
 
-url = "http://0.0.0.0:5000/search_user"
+url = "http://localhost:5000/search_user"
 if len(sys.argv) == 2:
     letter = sys.argv[1]
 else:
