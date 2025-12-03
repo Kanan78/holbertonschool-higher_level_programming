@@ -19,4 +19,3 @@ try:
         print("Not a valid JSON")
 except requests.RequestException as e:
     print(f"Error connecting to server: {e}")
-
