@@ -30,7 +30,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
 
-            self.wfile.write(b'{"status": "OK"}')
+            self.wfile.write(b'OK')
             return
 
         elif self.path == "/info":
@@ -51,7 +51,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
 
-            self.wfile.write(b'{"error": "Endpoint not found"}')
+            self.wfile.write(b"Endpoint not found")
             return
 
 server = HTTPServer(("localhost", 8000), MyAPI)
