@@ -12,6 +12,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
+            return
 
         if self.path == "/data":
             data = {"name": "John", "age": 30, "city": "New York"}
@@ -22,6 +23,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.end_headers()
 
             self.wfile.write(json_data)
+            return
 
         elif self.path == "/status":
             self.send_response(200)
@@ -29,6 +31,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.end_headers()
 
             self.wfile.write(b'{"status": "OK"}')
+            return
 
         elif self.path == "/info":
             info = {
@@ -41,6 +44,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.end_headers()
 
             self.wfile.write(payload)
+            return
 
         else:
             self.send_response(404)
@@ -48,7 +52,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.end_headers()
 
             self.wfile.write(b'{"error": "Endpoint not found"}')
-
+            return
 
 server = HTTPServer(("localhost", 8000), MyAPI)
 
