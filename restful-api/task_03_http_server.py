@@ -27,7 +27,7 @@ class MyAPI(BaseHTTPRequestHandler):
 
         elif self.path == "/info":
             info = {
-                    "version": "1.0"
+                    "version": "1.0",
                     "description": "A simple API built with http.server"
             }
             payload = json.dumps(info).encode()
