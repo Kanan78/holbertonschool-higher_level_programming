@@ -14,7 +14,7 @@ class MyAPI(BaseHTTPRequestHandler):
             self.wfile.write(b"Hello, this is a simple API!")
             return
 
-       elif self.path == "/data":
+        elif self.path == "/data":
             data = {"name": "John", "age": 30, "city": "New York"}
             json_data = json.dumps(data).encode()
 
