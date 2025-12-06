@@ -34,11 +34,8 @@ def generate_invitations(template, attendees):
             )
         
         filename = f"output_{index}.txt"
-
-        filepath = os.path.join(output_dir, filename)
-
         try:
-            with open(filepath, "w") as f:
+            with open(filename, "w") as f:
                 f.write(filled_text)
         except Exception as e:
             print(f"Error writing file {filename}: {e}")
