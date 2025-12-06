@@ -72,7 +72,7 @@ def admin_required():
     return decorator
 
 @app.route("/admin-only", methods=["GET"])
-@jwt_required()
+@admin_required()
 def admin_only():
     return jsonify({"message": "Admin Access: Granted"}), 200
 
