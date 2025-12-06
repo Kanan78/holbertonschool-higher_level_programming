@@ -61,7 +61,7 @@ def jwt_required():
     return jsonify({"message": "JWT Auth: Access Granted"}), 200
 
 def admin_required():
-    def decorator(fn)
+    def decorator(fn):
         @jwt_required()
         def wrapper(*args, **kwargs):
             identity = get_jwt_identity()
