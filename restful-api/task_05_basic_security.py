@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 app.config["JWT_SECRET_KEY"] = "secret12345"
 jwt = JWTManager(app)
-
+auth = HTTPBasicAuth()
 
 users = {
     "user1": {
