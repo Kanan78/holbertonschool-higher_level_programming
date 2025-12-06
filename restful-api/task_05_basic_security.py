@@ -56,12 +56,12 @@ def login():
         return jsonify({"access_token": access_token}), 200
     return jsonify({"error": "Invalid credentials"}), 401
 
-@app.route("/jwt-protected", methods=["GET"])
+@app.route("/jwt-protected")
 @jwt_required()
-def jwt_required():
+def jwt_protected():
     return jsonify({"message": "JWT Auth: Access Granted"}), 200
 
-@app.route("/admin-only", methods=["GET"])
+@app.route("/admin-only")
 @jwt_required()
 def admin_only():
 
