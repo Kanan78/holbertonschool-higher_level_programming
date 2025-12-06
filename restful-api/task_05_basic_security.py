@@ -69,9 +69,10 @@ def admin_required():
                 return jsonify({"error": "Admin access required"}), 403
             return fn(*args, **kwargs)
         return wrapper
+    return decorator
 
 @app.route("/admin-only", methods=["GET"])
-@admin_required()
+@jwt_required()
 def admin_only():
     return jsonify({"message": "Admin Access: Granted"}), 200
 
