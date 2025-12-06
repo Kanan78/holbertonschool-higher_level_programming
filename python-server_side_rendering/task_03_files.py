@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, requests
 import csv
 import json
 
@@ -32,7 +32,7 @@ def read_csv():
 
 @app.route("/products")
 def products_route():
-    source = request.args.get("source")
+    source = requests.args.get("source")
     product_id = requests.args.get("id")
     error = None
     products = []
