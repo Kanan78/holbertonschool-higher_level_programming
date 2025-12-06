@@ -1,6 +1,3 @@
-[
-    "Leonardo",
-    "Donatello",
-    "Raphael",
-    "Michelangelo"
-]
+{
+    "items": ["Python Book", "Flask Mug", "Jinja Sticker"]
+}
