@@ -31,6 +31,8 @@ def generate_invitations(template, attendees):
             .replace("{event_title}", person.get("event_title", "N/A"))
             .replace("{event_date}", person.get("event_date", "N/A"))
             .replace("{event_location}", person.get("event_location", "N/A"))        
+            )
+        
         filename = f"output_{index}.txt"
 
         filepath = os.path.join(output_dir, filename)
