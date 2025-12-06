@@ -12,11 +12,11 @@ def items():
     try:
         with open("items.json", "r") as f:
             data = json.load(f)
-
+            items = data.get("items", [])
     except Exception:
-        data = []
+        items = []
 
-    return render_template("items.html", items=data)
+    return render_template("items.html", items=items)
 
 if __name__ == "__main__":
     app.run()
