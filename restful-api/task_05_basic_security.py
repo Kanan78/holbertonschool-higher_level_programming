@@ -31,7 +31,7 @@ def verify_password(username, password):
         return username
 
 
-@app.route("/basic/protected")
+@app.route("/basic-protected")
 @auth.login_required
 def protected():
     return jsonify({"message": "Basic Auth: Access Granted"}), 200
