@@ -59,7 +59,7 @@ def add_user():
         "city": city
     }
 
-    return jsonify({"message"}: "User added successfully"), 201
+    return jsonify({"message": "User added successfully"}), 201
 
 
 if __name__ == "__main__":
