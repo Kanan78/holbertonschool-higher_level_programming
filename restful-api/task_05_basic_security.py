@@ -27,8 +27,9 @@ users = {
 
 @auth.verify_password
 def verify_password(username, password):
-    if username in users and check_password_hash(users[username], password):
+    if username in users and check_password_hash(users[username]["password"],  password):
         return username
+    return None
 
 
 @app.route("/basic-protected")
@@ -47,31 +48,30 @@ def login():
     username = data.get("username")
     password = data.get("password")
 
-    if username in users and check_password_hash(users[username]["password"]):
+    if username in users and check_password_hash(users[username]["password"], password):
         access_token = create_access_token(identity={
             "username": username,
             "role": users[username]["role"]})
         return jsonify({"access_token": access_token}), 200
     return jsonify({"error": "Invalid credentials"}), 401
 
-@app.route("/jwt-protected")
+@app.route("/jwt-protected", methods=["GET"])
 @jwt_required()
-def protect():
-    identity = get_jwt_identity()
-    if identity:
-        return jsonify({"message": "JWT Auth: Access Granted"}), 200
+def jwt_required():
+    return jsonify({"message": "JWT Auth: Access Granted"}), 200
 
-def admin_required(fn):
-    @jwt_required()
-    def wrapper(*args, **kwargs):
-        identity = get_jwt_identity()
-        if identity["role"] != "admin":
-            return jsonify({"error": "Admin access required"}), 403
-        return fn(*args, **kwargs)
-    return wrapper
+def admin_required():
+    def decorator(fn)
+        @jwt_required()
+        def wrapper(*args, **kwargs):
+            identity = get_jwt_identity()
+            if identity["role"] != "admin":
+                return jsonify({"error": "Admin access required"}), 403
+            return fn(*args, **kwargs)
+        return wrapper
 
 @app.route("/admin-only", methods=["GET"])
-@admin_required
+@admin_required()
 def admin_only():
     return jsonify({"message": "Admin Access: Granted"}), 200
 
