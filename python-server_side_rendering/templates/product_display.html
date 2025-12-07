@@ -6,8 +6,8 @@
     <h1>Product List</h1>
 
     {% if error %}
-    	<p>{{ error }}</p>
-    {% elif %}
+    	<p style="color: red;">{{ error }}</p>
+    {% else %}
 <table border="1" cellpadding="8">
     <thead>
         <tr>
@@ -28,7 +28,6 @@
     </tbody>
 </table>
 
-{% else %}
 <p>No products available.</p>
 {% endif %}
 </body>
